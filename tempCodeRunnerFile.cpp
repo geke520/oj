@@ -1,3 +1,3 @@
-    // if (n == 0)
-    //     cout << "count0=" << 32 << " "
-    //          << "count1=" << 0;
+for(int i=0;i<n;i++){
+        cout << A[i] <<" ";
+    }
