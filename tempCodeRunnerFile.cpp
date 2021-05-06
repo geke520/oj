@@ -1,2 +1,3 @@
-#include <cstring>//必须是cstring，否则strlen()方法不能用
-#include <cstdio>
+    // if (n == 0)
+    //     cout << "count0=" << 32 << " "
+    //          << "count1=" << 0;
