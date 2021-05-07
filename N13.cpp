@@ -1,4 +1,6 @@
-#include<iostream>
+// 找素数
+#include <iostream>
+#include <math.h>
 using namespace std;
 void primeNumber(int n)
 {
@@ -9,11 +11,11 @@ void primeNumber(int n)
             cout << 2;
             break;
         }
-        for (int j = 2; j < i;j++)
+        for (int j = 2; j < i; j++)
         {
-            if(i%j==0)
+            if (i % j == 0)
                 break;
-            if(j==i-1)
+            if (j == i - 1)
             {
                 cout << i;
                 exit(0);

@@ -10,7 +10,7 @@ void secret(string str)
         {
             str[i] = (str[i] + 3)%90;
             if(str[i] < 65)
-                cout << str[i]+64;
+                cout << char(str[i]+64);
             else
                 cout << str[i];
         }else 
@@ -18,7 +18,7 @@ void secret(string str)
         {
             str[i] = (str[i] + 3)%122;
             if(str[i] < 97)
-                cout << str[i]+96;
+                cout << char(str[i]+96);
             else
                 cout << str[i];
         }else{
