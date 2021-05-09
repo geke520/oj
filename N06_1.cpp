@@ -1,9 +1,10 @@
 // 字符串翻转
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 #define N 100
 using namespace std;
-typedef struct LNode{
+typedef struct LNode
+{
     char data;
     struct LNode *next;
 } LNode, *LinkList;
@@ -14,10 +15,10 @@ typedef struct LNode{
 // }
 
 // 单链表头插法及倒叙
-LinkList List_TailInsert(LinkList &L,string str)
+LinkList List_HeadInsert(LinkList &L, string str)
 {
     LNode *s;
-    for (int i = 0; i < str.length();i++)
+    for (int i = 0; i < str.length(); i++)
     {
         s = (LNode *)malloc(sizeof(LNode));
         s->data = str[i];
@@ -30,22 +31,23 @@ LinkList List_TailInsert(LinkList &L,string str)
 LNode *GetElem(LinkList L)
 {
     LNode *p = L->next;
-    for (int i = 1; p!=NULL ;i++)
+    for (int i = 1; p != NULL; i++)
     {
         cout << p->data;
         p = p->next;
     }
     return p;
 }
-int main(){
+int main()
+{
     int len;
     // char *s[N]={0};
-    string str="";
+    string str = "";
     cin >> str;
     // s[N] = str.c_str();
     LinkList L = (LinkList)malloc(sizeof(LNode));
     L->next = NULL;
-    L = List_TailInsert(L,str);
+    L = List_HeadInsert(L, str);
     // cout << L;
     GetElem(L);
     return 0;
