@@ -9,7 +9,7 @@ int getArrayLen(T1 &array) /*使用模板定义一个函数getArrayLen,该函数
 void frequency(string str)
 {
     int count[26]={0};
-    char word;
+    char word = 97;
     for (int i = 0; i < str.length(); i++)
     {
         // if ((str[i] > 64 && str[i] < 91)||(str[i] > 96 && str[i] < 123))
