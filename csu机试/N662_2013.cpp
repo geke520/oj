@@ -19,10 +19,11 @@ void couqian(int a[],int n)
             {
                 // 50元
                 salary += 1;
-                salary += a[i] % 10 / 10;
-            }else if(a[i]%100>=10){
+                a[i] = a[i]%100 - 50;
+            }
+            if(a[i]%100<50&&a[i]%100>=10){
                 // 10元
-                salary += a[i] % 100 / 10;
+                salary += a[i]/ 10;
             }
             if(a[i]%10>=5)
             {
@@ -40,14 +41,15 @@ void couqian(int a[],int n)
                 salary += 1;
             }
         }else{
-            if(a[i]%100>=50)
+            if(a[i]>=50)
             {
                 // 50元
                 salary += 1;
-                salary += a[i] % 10 / 10;
-            }else if(a[i]%100>=10){
+                a[i] = a[i] - 50;
+            }
+            if(a[i]<50&&a[i]>=10){
                 // 10元
-                salary += a[i] % 100 / 10;
+                salary += a[i]/ 10;
             }
             if(a[i]%10>=5)
             {
