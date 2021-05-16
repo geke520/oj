@@ -13,10 +13,10 @@
 #include<bits/stdc++.h>
 #define N 20000
 using namespace std;
-void bubblesort(int a[],int n)
+void bubblesort(int a[],int n,int i)
 {
-    int i = 0, j = 0;
-    for (i = 0; i < n-1;i++)
+    int j = 0;
+    for (i; i < n-1;i++)
     {
         bool flag=false;
         for(j=n-1;j>i;j--)
@@ -35,20 +35,18 @@ void merge(int a[],int n)
 {
     long long int sum = 0;
     int b[N] = {0};
-    bubblesort(a, n);
-    sum = a[0] + a[1];
+    // bubblesort(a, n);
+    // sum = a[0] + a[1];
     // a[0] = a[1] = 0;
     // a[1] = sum;
     // bubblesort(a, n);
-    for (int i = 2; i < n; i++)
+    for (int i = 0; i < n-1;i++)
     {
-        b[0] = sum;
-        for (int j = 1; j < n-1; j++,n--)
-        {
-            b[j] = a[i];
-        }
-        bubblesort(b, n-1);
-        sum += (b[0]+b[1]);
+        // --n;
+        bubblesort(a, n,i);
+        sum += (a[i]+a[i+1]);
+        a[i] = 0;
+        a[i+1] = sum;
     }
     cout << sum << endl;
 }
@@ -57,6 +55,6 @@ int main()
     int n = 0, a[N] = {0};
     cin >> n;
     for (int i = 0; i < n;i++)
-      cin >> a[i];
+        cin >> a[i];
     merge(a, n);
 }

@@ -9,54 +9,27 @@
 的第三堆合并，又得到新的堆，数目为12，耗费体力为12。所以多多总共耗费体力=3+12=15。
 可以证明15为最小的体力耗费值。*/
 
-// #include<iostream>
 #include<bits/stdc++.h>
-#define N 20000
 using namespace std;
-void bubblesort(int a[],int n)
-{
-    int i = 0, j = 0;
-    for (i = 0; i < n-1;i++)
-    {
-        bool flag=false;
-        for(j=n-1;j>i;j--)
-        {
-            if(a[j-1]>a[j])
-            {
-                swap(a[j - 1], a[j]);
-                flag = true;
-            }
-        }
-        if(flag==false)
-            return;
-    }
-}
-void merge(int a[],int n)
-{
-    long long int sum = 0;
-    int b[N] = {0};
-    bubblesort(a, n);
-    sum = a[0] + a[1];
-    // a[0] = a[1] = 0;
-    // a[1] = sum;
-    // bubblesort(a, n);
-    for (int i = 2; i < n; i++)
-    {
-        b[0] = sum;
-        for (int j = 1; j < n-1; j++,n--)
-        {
-            b[j] = a[i];
-        }
-        bubblesort(b, n-1);
-        sum += (b[0]+b[1]);
-    }
-    cout << sum << endl;
-}
 int main()
 {
-    int n = 0, a[N] = {0};
+    int n = 0, sum = 0, x = 0, x1 = 0, x2 = 0;
     cin >> n;
-    for (int i = 0; i < n;i++)
-      cin >> a[i];
-    merge(a, n);
+    priority_queue<int, vector<int>, greater<int>> q;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x;
+        q.push(x);
+    }
+    while (q.size() > 1)
+    {
+        int x1 = q.top();
+        q.pop();
+        int x2 = q.top();
+        q.pop();
+        sum += (x1 + x2);
+        q.push(x1 + x2);
+    }
+    cout << sum << endl;
+    return 0;
 }
