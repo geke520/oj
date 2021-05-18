@@ -6,7 +6,7 @@ using namespace std;
 void chuqudaxiao(int n,int a[])
 {
     int i = 0, k = 0;
-    for (int j = i+1;j<n;)
+    for (int j = i + 1; j < n;)
     {
         if(a[i]<a[j])
             j++;
@@ -17,12 +17,15 @@ void chuqudaxiao(int n,int a[])
         }   
     }
     a[i] = -1;
-    for (int y = k+1;y<n;)
+    for (int y = k + 1; y < n;)
     {
         if(a[k]>a[y])
             y++;
         else
+        {
             k = y;
+            y = k + 1;
+        }
     }
     a[k] = -1;
     for (int x = 0; x < n; x++)
