@@ -10,20 +10,26 @@
 using namespace std;
 void ip(string str)
 {
-    int x = 0,k=0;
+    int x = 256,k=0;
     int flag = 0;
     string s[4]={""};
-    for (int i = 0; i < str.length()+1;i++)
+    for (int i = 0; i < str.length();i++)
     {
         if(str[i]<='9'&&str[i]>='0')
         {
             s[k] += str[i];
-            x = atoi(s[k].c_str());
-        }else if((str[i]=='.'&&x<256)||x<256||k<4)
+        }else if(str[i]=='.'&&k<3)
         {
-            k++;
+            x = atoi(s[k].c_str());
+            if(x<256)
+                k++;
+            else
+            {
+                cout <<"Error";
+                return;
+            }
         }else{
-            cout << "Error";
+            cout <<"Error";
             return;
         }
     }
