@@ -5,7 +5,7 @@
 // 输入：257.32.23.1
 // 输出：Error
 // 注意：输入可能是任意的一个字符串，比如“abc.bas.fefe.4r4”或者“23.23.11.23.123”
-// 这都是不合法的IP地址
+// 这都是不合法的IP地址ps.要小于等于255
 #include<bits/stdc++.h>
 using namespace std;
 void ip(string str)
