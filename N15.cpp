@@ -6,7 +6,7 @@ using namespace std;
 typedef struct Node {
     int Element; // 节点中的元素为整数类型
     struct Node * Next; // 指向下一个节点
-} LNode, *LinkList;;
+} LNode, *LinkList;
 template <class T2>
 int getArrayLen(T2 &array) /*使用模板定义一个函数getArrayLen,该函数将返回数组array的长度*/
 {
