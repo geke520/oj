@@ -7,10 +7,35 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-void backpack(int s,int a[],int n)
-{
-    for (int i = 0; i < n; i++)
-    {
-        
+
+int w, n, a[1000];
+bool backpack(int index, int sum) {
+    if (sum > w) {
+        return false;
     }
+    if (index > n) {
+        if (sum == w) {
+            return true;
+        }
+        return false;
+    }
+    return backpack(index + 1, sum + a[index]) || backpack(index + 1, sum);
+
+}
+
+int main()
+{
+    while (cin >> w >> n) {
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+        bool res = backpack(0, 0);
+        if (res) {
+            cout << "YES" << endl;
+        }
+        else {
+            cout << "NO" << endl;
+        }
+    }
+	return 0;
 }
