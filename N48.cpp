@@ -11,12 +11,18 @@ float fantan(int n)
 }
 float jingguo(int n)
 {
-    float sum = 1.5*m;
+    // float sum = 1.5*m;
+    // for (int i = 2;i<=n;i++)
+    // {
+    //     sum += (fantan(i)+fantan(i-1));                                                                                                                                  
+    // }
+    // return sum-fantan(n);// 第N次落地不会反弹所以减去反弹值
+    float sum = m;
     for (int i = 2;i<=n;i++)
     {
-        sum += (fantan(i)+fantan(i-1));                                                                                                                                  
+        sum += fantan(i-1)*2;                                                                                                                                 
     }
-    return sum-fantan(n);// 第N次落地不会反弹所以减去反弹值
+    return sum;
 }
 int main()
 {
