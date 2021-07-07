@@ -22,15 +22,14 @@ double avg(double a, double b, double c)
     return (a + b + c)/ 3.0;
 }
 double highgrade = 0.0;
-int high(int i, double avg)
+int num = 0;
+void high(int i, double avg)
 {
-    int index = 0;
     if (highgrade < avg)
     {
         highgrade = avg;
-        index = i;
+        num = i;
     }
-    return index;
 }
 int main()
 {
@@ -43,7 +42,8 @@ int main()
         Stu[i].average = avg(Stu[i].grade1, Stu[i].grade2, Stu[i].grade3);
         // cout << fixed << setprecision(1);
         // cout << Stu[i].Name << " " << Stu[i].average << endl;
-        index = high(i, Stu[i].average);
+        high(i, Stu[i].average);
+        // cout << index<<' '<<endl;
     }
     for (int i = 0; i < n; i++)
     {
@@ -51,6 +51,6 @@ int main()
         cout << Stu[i].Name << ' ' << Stu[i].average << endl;
     }
     cout << fixed << setprecision(1);
-    cout << Stu[index].No << ' ' << Stu[index].Class << ' ' << Stu[index].Name << ' ' << Stu[index].grade1 << ' ' << Stu[index].grade2 << ' ' << Stu[index].grade3 << ' ' << highgrade;
+    cout << Stu[num].No << ' ' << Stu[num].Class << ' ' << Stu[num].Name << ' ' << Stu[num].grade1 << ' ' << Stu[num].grade2 << ' ' << Stu[num].grade3 << ' ' << highgrade;
     return 0;
 }
