@@ -2,7 +2,7 @@
 // 它的模式就是5。现在你的任务，就是从数字中找到它的模式.
 #include<bits/stdc++.h>
 using namespace std;
-#define N 2000000
+#define N 99999
 int main()
 {
     int n=0;
